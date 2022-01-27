@@ -1,0 +1,22 @@
+cabal-version: 3.0
+name:          xmonad-sureyeaah
+version:       0.1.0.0
+homepage:      http://xmonad.org
+author:        Shaurya Gupta <shauryab98@gmail.com>
+maintainer:    Shaurya Gupta <shauryab98@gmail.com>
+license:       BSD-3-Clause
+build-type:    Simple
+
+------------------------------------------------------------------------------
+executable xmonad
+  main-is: Main.hs 
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -fno-warn-missing-signatures -O2
+  build-depends: 
+    base,
+    containers,
+    directory,
+    filepath,
+    transformers,
+    xmonad,
+    xmonad-contrib,
+    unix
