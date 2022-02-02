@@ -72,6 +72,10 @@ in {
   networking.useDHCP = false;
   networking.interfaces.enp4s0.useDHCP = true;
   networking.interfaces.wlp5s0.useDHCP = true;
+  networking.extraHosts = 
+    ''
+      172.31.107.209 ci-ingress.relicx.ai
+    '';
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -93,7 +97,7 @@ in {
     vscode
     pulsemixer
     mpv
-    chromium
+    brave 
     pavucontrol
     xclip
     xfce.xfce4-clipman-plugin
@@ -102,8 +106,16 @@ in {
     xfce.thunar
     mcomix3
     steam-run
-    logseq
+    obsidian
+    slack
+    winetricks
+    calibre
+    mesa-demos
+    anydesk
+    solaar
+    remmina
   ]);
+
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "sureyeaah" ];
