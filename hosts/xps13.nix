@@ -84,7 +84,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.114.110 ci-ingress.relicx.ai
+      172.31.107.209 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
@@ -123,6 +123,7 @@ in {
     mesa-demos
     anydesk
     solaar
+    remmina
   ]);
 
   environment.variables = {
