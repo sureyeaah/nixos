@@ -117,9 +117,6 @@ in {
   ]);
 
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "sureyeaah" ];
-
   services = {
     openssh.enable = true;
   };
