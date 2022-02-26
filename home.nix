@@ -70,6 +70,9 @@ rec {
     ssh = {
       enable = true;
       extraConfig = ''
+host *
+  ControlMaster auto
+  ControlPath ~/.ssh/ssh_mux_%h_%p_%r
 Host relicx-dev
   HostName 172.31.19.28
   User ubuntu
