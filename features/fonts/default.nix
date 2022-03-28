@@ -9,7 +9,7 @@ in {
     fira-code
     fira-mono
     icomoon-feather
-    font-awesome-ttf
+    font-awesome
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 

@@ -52,9 +52,13 @@ in {
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    trustedUsers = [ "root" "sureyeaah" ];
-    autoOptimiseStore = true;
   };
+
+  nix.settings = {
+    trusted-users = [ "root" "sureyeaah" ];
+    auto-optimise-store = true;
+  };
+
 
   nix.gc = {
     automatic = true;

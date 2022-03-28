@@ -62,8 +62,11 @@ in {
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    trustedUsers = [ "root" "sureyeaah" ];
-    autoOptimiseStore = true;
+  };
+
+  nix.settings = {
+    trusted-users = [ "root" "sureyeaah" ];
+    auto-optimise-store = true;
   };
 
   nix.gc = {
@@ -84,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.107.209 ci-ingress.relicx.ai
+      172.31.119.71 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
@@ -162,15 +165,6 @@ in {
   systemd.services.systemd-user-sessions.enable = false;
 
   services.gnome.gnome-keyring.enable = true;
-
-  # IOHK Binary cache
-  # Binary Cache for Haskell.nix
-  nix.binaryCachePublicKeys = [
-    "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
-  ];
-  nix.binaryCaches = [
-    "https://hydra.iohk.io"
-  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
