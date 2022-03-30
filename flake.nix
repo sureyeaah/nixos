@@ -22,7 +22,6 @@
           configurationNix
 
           # Features common to all of my machines
-          ./features/caches
           ./features/fonts
 
           # home-manager configuration
