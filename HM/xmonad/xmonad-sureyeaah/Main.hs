@@ -446,6 +446,8 @@ keyBindings =
     -- Monitor setup
     ("M-M1-1", "Laptop monitor only", changeMonitorLayout "switch_laptop_monitor"),
     ("M-M1-2", "External monitor only", changeMonitorLayout "switch_external_monitor"),
+    ("M-M1-3", "TV only", changeMonitorLayout "switch_tv"),
+    ("M-M1-4", "Monitor right only", changeMonitorLayout "switch_external_monitor_2"),
     -- ("M-M1-2", "Laptop + monitor", changeMonitorLayout "laptop-dual-monitor.sh"),
     -- ("M-M1-4", "Dual monitor", changeMonitorLayout "dual-monitor.sh"),
     -- Layout

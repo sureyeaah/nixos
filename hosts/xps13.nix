@@ -87,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.119.71 ci-ingress.relicx.ai
+      172.31.90.202 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
@@ -111,6 +111,8 @@ in {
     pulsemixer
     mpv
     brave 
+    chromium
+    git
     pavucontrol
     xclip
     xfce.xfce4-clipman-plugin
@@ -122,11 +124,13 @@ in {
     obsidian
     slack
     winetricks
-    calibre
+    # calibre
     mesa-demos
     anydesk
     solaar
     remmina
+    python
+    zoom-us
   ]);
 
   environment.variables = {
@@ -151,7 +155,6 @@ in {
   # Audio and bluetooth
   hardware.pulseaudio = {
     enable = true;
-    extraModules = [ pkgs.pulseaudio-modules-bt ];
     package = pkgs.pulseaudioFull;
   };
   hardware.bluetooth.enable = true;
