@@ -87,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.90.202 ci-ingress.relicx.ai
+      172.31.108.192 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
