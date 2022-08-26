@@ -5,6 +5,7 @@ let
 in {
   # Set system-wide fonts.
   fonts.fonts = with pkgs; [
+    mononoki
     noto-fonts
     fira-code
     fira-mono

@@ -98,7 +98,7 @@ in {
 
   users.users.sureyeaah= {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
     shell = pkgs.fish;
   };
   security.sudo.enable = true;
@@ -139,6 +139,7 @@ in {
     _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
   };
 
+  virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "sureyeaah" ];
 
