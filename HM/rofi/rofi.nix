@@ -4,7 +4,7 @@
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = ./dracula.rasi;
+    theme = ./nord.rasi;
     extraConfig = {
       columns = 1;
       dpi = 1;
@@ -13,7 +13,7 @@
       kb-remove-char-forward = "Delete";
       kb-remove-to-sol = "";
       kb-row-down = "Down,Control+d";
-      kb-row-up = "Up,Control+u,ISO_Left_Tab";
+      kb-row-up = "Up,Control+u";
       kb-primary-paste = "Control+V,Shift+Insert";
       run-shell-command = "{terminal} -e {cmd}";
       show-icons = true;
