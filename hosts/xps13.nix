@@ -87,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.111.244 ci-ingress.relicx.ai
+      172.31.78.58 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
@@ -99,7 +99,7 @@ in {
   users.users.sureyeaah= {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;

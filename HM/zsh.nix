@@ -1,10 +1,9 @@
 { pkgs, config, ... }:
 
 {
-  programs.fish.enable = true;
-  programs.fish.plugins = [];
+  programs.zsh.enable = true;
 
-  programs.fish.shellAbbrs = {
+  programs.zsh.shellAliases = {
     ls = "ls --color";
     rm = "rm -v";
     cp = "cp -v";
@@ -14,4 +13,9 @@
     permission = "stat -c%a";
   };
 
+  ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "bundler" "dotenv" ];
+    theme = "robbyrussell";
+  };
 }

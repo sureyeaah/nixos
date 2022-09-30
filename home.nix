@@ -2,7 +2,7 @@
 
 rec {
   imports = [
-    ./HM/fish.nix
+    ./HM/zsh.nix
     ./HM/kitty.nix
     ./HM/nvim
     ./HM/rofi

@@ -6,7 +6,7 @@
 
     font = {
       name = "JetBrainsMono Nerd Font Mono";
-      size = 20;
+      size = 18;
     };
 
     extraConfig = ''
@@ -91,6 +91,7 @@
       color7 #686f9a
       color15 #f0f1ce
       selection_foreground #ffffff
+      confirm_os_window_close 0
     '';
 
   };

@@ -90,7 +90,7 @@ in {
   users.users.sureyeaah= {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;

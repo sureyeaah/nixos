@@ -60,7 +60,7 @@
   users.users.sureyeaah= {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "audio" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
   };
   security.sudo.enable = true;
   security.sudo.wheelNeedsPassword = false;
