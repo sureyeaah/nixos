@@ -58,7 +58,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -87,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.78.58 ci-ingress.relicx.ai
+      172.31.94.183 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.

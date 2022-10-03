@@ -430,8 +430,8 @@ keyBindings =
     ("<XF86AudioNext>", "Next track", spawn "playerctl next"),
     ("<XF86AudioMicMute>", "Mute mic", spawn "pactl set-source-mute @DEFAULT_SOURCE@ toggle"),
     ("M-A-m", "Mute mic", spawn "pactl set-source-mute @DEFAULT_SOURCE@ toggle"),
-    ("<XF86MonBrightnessDown>", "Decrease Brightness", spawn "$(which xbacklight) -dec 10"),
-    ("<XF86MonBrightnessUp>", "Increase brightness", spawn "$(which xbacklight) -inc 10"),
+    ("<XF86MonBrightnessDown>", "Decrease Brightness", spawn "oled_brightness Down"),
+    ("<XF86MonBrightnessUp>", "Increase brightness", spawn "oled_brightness Up"),
     -- Scratchpads
     ("M-S-p", "Open Pavucontrol scratchpad", namedScratchpadAction myScratchPads "pulse"),
     -- My Applications

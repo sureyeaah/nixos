@@ -36,6 +36,8 @@ rec {
     dnsutils
     lazygit
   ];
+
+  home.file.".config/starship.toml".source = ./starship.toml;
   
   programs = {
 
@@ -55,14 +57,11 @@ rec {
 
     starship = {
       enable = true;
-      settings = {
-        hostname.ssh_only = false;
-      };
     };
 
     fzf = {
       enable = true;
-      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
 
     jq.enable = true;

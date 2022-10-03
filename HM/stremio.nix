@@ -67,7 +67,7 @@ in qt5.mkDerivation rec {
 
   meta = with lib; {
     description = "The Next Generation Media Center";
-    homepage = ""https://github.com/Stremio/stremio-shell;
+    homepage = "https://github.com/Stremio/stremio-shell";
     license = licenses.gpl3;
     platforms = [ "x86_64-linux" ];
   };

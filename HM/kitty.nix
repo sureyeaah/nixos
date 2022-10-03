@@ -6,7 +6,7 @@
 
     font = {
       name = "JetBrainsMono Nerd Font Mono";
-      size = 18;
+      size = 22;
     };
 
     extraConfig = ''

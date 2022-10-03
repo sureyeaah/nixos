@@ -21,6 +21,7 @@ let
     xrandr --output DP-1 --off --output eDP-1 --off --output DP-4 --auto --transform 1.05,0,0,0,1.05,0,0,0,1
     systemctl restart --user polybar
   '';
+  oledBrightness = pkgs.writeScriptBin "oled_brightness" (builtins.readFile ./oled_brightness.sh);
 in {
   environment.systemPackages = with pkgs; [
     xorg.xwininfo
@@ -33,6 +34,7 @@ in {
     switchExternalMonitor
     switchExternalMonitor2
     switchTv
+    oledBrightness
     playerctl
     gnome.gnome-screenshot
   ];
