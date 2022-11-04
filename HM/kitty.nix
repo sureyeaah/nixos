@@ -5,7 +5,7 @@
     enable = true;
 
     font = {
-      name = "JetBrainsMono Nerd Font Mono";
+      name = "mononoki";
       size = 22;
     };
 

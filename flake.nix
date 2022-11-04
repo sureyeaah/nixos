@@ -30,7 +30,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.sureyeaah = import ./home.nix {
-              inherit inputs system;
+              inherit inputs system latest;
               pkgs = import nixpkgs { inherit system; };
             };
           }
