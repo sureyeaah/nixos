@@ -454,8 +454,8 @@ keyBindings =
     ("M--", "US Layout", usLayout),
     ("M-S--", "Colemak-dh Layout", colemakLayout),
     -- Power
-    ("M-x s", "Suspend", spawn "systemctl suspend && mylock"),
-    ("M-x l", "Lock", spawn "mylock"),
+    ("M-x s", "Suspend", spawn "lock_and_suspend"),
+    ("M-x l", "Lock", spawn "lock_screen"),
     ("M-x r", "Reboot", spawn "reboot")
   ]
 

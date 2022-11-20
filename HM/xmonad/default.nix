@@ -22,6 +22,16 @@ let
     systemctl restart --user polybar
   '';
   oledBrightness = pkgs.writeScriptBin "oled_brightness" (builtins.readFile ./oled_brightness.sh);
+  lockScreen = pkgs.writeScriptBin "lock_screen" ''
+    #!${pkgs.stdenv.shell}
+    xsecurelock;
+  '';
+  lockAndSuspend = pkgs.writeScriptBin "lock_and_suspend" ''
+    #!${pkgs.stdenv.shell}
+    xsecurelock &
+    sleep 2
+    systemctl suspend
+  '';
 in {
   environment.systemPackages = with pkgs; [
     xorg.xwininfo
@@ -37,6 +47,9 @@ in {
     oledBrightness
     playerctl
     gnome.gnome-screenshot
+    xsecurelock
+    lockAndSuspend
+    lockScreen
   ];
 
   services.xserver = {
