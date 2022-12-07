@@ -1,4 +1,5 @@
-{ pkgs, inputs, system, latest, ...}:
+{ pkgs, inputs, system, ...}:
+
 
 rec {
   imports = [
@@ -31,7 +32,6 @@ rec {
     pciutils
     psmisc
     p7zip
-    latest.logseq
     nix-prefetch-git
     dnsutils
     lazygit

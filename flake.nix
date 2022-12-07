@@ -23,6 +23,7 @@
 
           # Features common to all of my machines
           ./features/fonts
+          ./features/losgeq
 
           # home-manager configuration
           home-manager.nixosModules.home-manager

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   programs.zsh = {
@@ -12,6 +12,8 @@
       save = 100000;
       share = true;
     };
+
+    envExtra = lib.strings.concatStrings ["PATH=$PATH:/home/sureyeaah/.cargo/bin"];
 
     shellAliases = {
       ls = "ls --color";
