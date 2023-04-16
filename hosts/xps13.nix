@@ -1,8 +1,8 @@
 { config, lib, pkgs, modulesPath, latest, ... }:
 
 let
-  # TODO: move this.
   stremio = pkgs.callPackage ../HM/stremio.nix {};
+  logseq = pkgs.callPackage ../HM/logseq.nix {};
 in {
   imports = [ ];
   # Trackpad support
@@ -87,7 +87,7 @@ in {
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.extraHosts = 
     ''
-      172.31.80.244 ci-ingress.relicx.ai
+      172.31.74.72 ci-ingress.relicx.ai
     '';
 
   # Set your time zone.
@@ -95,6 +95,12 @@ in {
   
   # TODO: move this
   programs.mosh.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   users.users.sureyeaah= {
     isNormalUser = true;
@@ -120,7 +126,6 @@ in {
     stremio
     xfce.thunar
     mcomix3
-    steam-run
     obsidian
     slack
     winetricks
@@ -131,7 +136,28 @@ in {
     remmina
     python
     zoom-us
-  ]);
+    wally-cli
+    fractal
+    citra
+    joycond
+    sound-theme-freedesktop
+    zip
+    unzip
+    (retroarch.override {
+      cores = [
+        libretro.genesis-plus-gx
+        libretro.snes9x
+        libretro.beetle-psx-hw
+        libretro.citra
+        libretro.parallel-n64
+      ];
+    })
+    libretro.genesis-plus-gx
+    libretro.snes9x
+    libretro.beetle-psx-hw
+    libretro.citra
+    libretro.parallel-n64
+  ]) ++ [logseq];
 
   environment.variables = {
     GDK_SCALE = "2";
@@ -170,6 +196,29 @@ in {
 
   services.gnome.gnome-keyring.enable = true;
 
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_BATTERY = "powersave";
+      START_CHARGE_THRESH_BAT0 = 90;
+      STOP_CHARGE_THRESH_BAT0 = 97;
+      RUNTIME_PM_ON_BAT = "auto";
+    };
+  };
+
+  services.cron = {
+    enable = true;
+    systemCronJobs = [
+      "* * * * * sureyeaah (($(cat /sys/class/power_supply/BAT0/capacity) < 100)) && ${pkgs.libnotify}/bin/notify-send foo && ${pkgs.libnotify}/bin/notify-send bar"
+    ];
+  };
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "python-2.7.18.6"
+    "electron-19.0.7"
+  ]; 
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -177,5 +226,4 @@ in {
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.09"; # Did you read the comment?
-
 }

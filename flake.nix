@@ -23,7 +23,6 @@
 
           # Features common to all of my machines
           ./features/fonts
-          ./features/logseq
 
           # home-manager configuration
           home-manager.nixosModules.home-manager
@@ -50,6 +49,7 @@
         [
           ./HM/xmonad
         ];
+
       nixosConfigurations.relicx-xps13= mkHomeMachine
         ./hosts/xps13.nix
         [
